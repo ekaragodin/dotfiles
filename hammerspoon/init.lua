@@ -30,19 +30,13 @@ hs.hotkey.bind({"ctrl", "command"}, "Q", function()
 	hs.caffeinate.startScreensaver()
 end);
 
--- window management
+-- window layout
 
 hs.hotkey.bind({"cmd", "alt"}, "F", function()
 	hs.window.focusedWindow():maximize()
 end);
 
--- fullscreen
-
-function fullscreen(window)
-	if (not window:isFullScreen()) then
-		window:setFullScreen(true)
-	end
-end
+-- screen switcher
 
 function isInScreen(screen, win)
   return win:screen() == screen
