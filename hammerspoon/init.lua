@@ -15,6 +15,7 @@ end
 -- configuration
 
 hs.window.animationDuration = 0
+hs.application.enableSpotlightForNameSearches(true)
 
 -- caffeine
 
@@ -65,6 +66,12 @@ end)
 
 hs.hotkey.bind({"alt", "shift"}, "`", function()
   focusScreen(hs.window.focusedWindow():screen():previous())
+end)
+
+-- apps switcher
+
+hs.hotkey.bind({"alt"}, "I", function ()
+  hs.application.launchOrFocus('PhpStorm.app')
 end)
 
 -- run
