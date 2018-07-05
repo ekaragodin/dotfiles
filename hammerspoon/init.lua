@@ -62,9 +62,21 @@ hs.hotkey.bind({"alt", "shift"}, "`", function()
   focusScreen(hs.window.focusedWindow():screen():previous())
 end)
 
+-- send current window to another screen
+function sendCurrentWindowToNextScreen()
+    local win = hs.window.focusedWindow();
+    if win then
+        win:moveToScreen(win:screen():next())
+    end
+end
+
+hs.hotkey.bind({"cmd", "shift"}, "F", function ()
+  sendCurrentWindowToNextScreen()
+end)
+
 -- apps switcher
 
-hs.hotkey.bind({"alt"}, "I", function ()
+hs.hotkey.bind({"alt"}, "P", function ()
   hs.application.launchOrFocus('PhpStorm.app')
 end)
 
